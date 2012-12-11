@@ -11,6 +11,11 @@
   "license": "MIT",
   "dependencies": {
     "coffee-script": "*",
+    "underscore": "*",
     "async": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*"
   }
 }
