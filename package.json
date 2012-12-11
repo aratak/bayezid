@@ -1,12 +1,23 @@
 {
-  "name": "petrik",
+  "name": "bayezid",
   "version": "0.0.0",
-  "description": "ERROR: No README.md file found!",
+  "description": "Simple implementation of bayesian network on Node.js framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers coffee:coffee-script"
   },
   "repository": "",
   "author": "Alexey Osipenko",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "*",
+    "underscore": "*",
+    "async": "*",
+    "wrench": "*"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "*",
+    "sinon": "*"
+  }
 }
