@@ -8,5 +8,9 @@
   },
   "repository": "",
   "author": "Alexey Osipenko",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "coffee-script": "*",
+    "async": "*"
+  }
 }
