@@ -4,7 +4,7 @@
   "description": "Simple implementation of bayesian network on Node.js framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --compilers coffee:coffee-script"
   },
   "repository": "",
   "author": "Alexey Osipenko",
@@ -12,7 +12,8 @@
   "dependencies": {
     "coffee-script": "*",
     "underscore": "*",
-    "async": "*"
+    "async": "*",
+    "wrench": "*"
   },
   "devDependencies": {
     "mocha": "*",

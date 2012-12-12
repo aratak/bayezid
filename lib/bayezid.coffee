@@ -1,14 +1,25 @@
+_ = require 'underscore'
 path = require 'path'
+wrench = require 'wrench'
+fs = require 'fs'
 
-class NestedModules
-  constructor: ({ @path })->
+normalizePath = (args...)-> path.normalize path.resolve(args...)
 
+class BayezidModule
+  constructor: ({ @modulePath })->
+    @_module = require(@modulePath)
+    @dependencies = @_module.dependencies
+    @start = @_module.start
 
 class Bayezid
-  constructor: ({ path, rootFolder })->
+  initializeModules: (_path=@path)->
+    @modules = for modulePath in wrench.readdirSyncRecursive(_path) when fs.statSync(normalizePath(_path, modulePath)).isFile()
+      new BayezidModule({ modulePath })
+
+  constructor: ({ path: _path, rootFolder })->
     @rootFolder = rootFolder or process.cwd()
-    @path = path.normalize path.resolve rootFolder, path
-    @modules = new NestedModules({ @path })
+    @path = normalizePath(rootFolder, _path)
+    @initializeModules()
 
 
 module.exports = Bayezid

@@ -6,6 +6,9 @@ describe "requirements", ()->
 
   beforeEach (done)->
     bayezid = new Bayezid path: "./test/fixtures/dummyModules"
-    bayezid.process()
+    done()
 
 
+  it "should find all modules", (done)->
+    assert.deepEqual [ 'firstLevelModule.coffee', 'firstLevelModuleTwo.coffee', 'index.coffee', 'secondLevel/index.coffee', 'secondLevel/secondLevelModule.coffee' ], bayezid.moduleNames
+    done()
