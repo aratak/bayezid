@@ -10,5 +10,5 @@ describe "requirements", ()->
 
 
   it "should find all modules", (done)->
-    assert.deepEqual [ 'firstLevelModule.coffee', 'firstLevelModuleTwo.coffee', 'index.coffee', 'secondLevel/index.coffee', 'secondLevel/secondLevelModule.coffee' ], bayezid.moduleNames
+    assert.deepEqual [ 'firstLevelModule.coffee', 'firstLevelModuleTwo.coffee', 'index.coffee', 'secondLevel/index.coffee', 'secondLevel/secondLevelModule.coffee' ], bayezid.moduleNames()
     done()
