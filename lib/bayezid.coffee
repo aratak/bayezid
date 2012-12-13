@@ -7,7 +7,6 @@ normalizePath = (args...)-> path.normalize path.resolve(args...)
 
 class BayezidModule
   constructor: ({ @name, modulePath })->
-    console.log modulePath, @name
     @_module = require normalizePath modulePath, @name
     @dependencies = @_module.dependencies
     @start = @_module.start
@@ -23,7 +22,5 @@ class Bayezid
     @initializeModules()
 
   moduleNames: -> m.name for m in @modules
-
-
 
 module.exports = Bayezid
