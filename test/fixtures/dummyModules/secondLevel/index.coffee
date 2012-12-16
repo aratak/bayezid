@@ -1,3 +1,3 @@
 module.exports =
-  dependencies: 'all'
+  dependencies: ['secondLevelModule']
   start: (data, cb)->
