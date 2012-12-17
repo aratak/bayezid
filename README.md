@@ -12,7 +12,7 @@ pending...
 
 # Testing
 
-![](https://api.travis-ci.org/aratak/bayezid.png)
+[![Build Status](https://travis-ci.org/aratak/bayezid.png)](https://travis-ci.org/aratak/bayezid)
 
 `npm test` or `NODE_ENV=test mocha --compilers coffee:coffee-script`
 
