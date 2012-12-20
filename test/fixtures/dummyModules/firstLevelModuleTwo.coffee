@@ -1,4 +1,5 @@
 module.exports =
   name: 'firstLevelModuleTwo'
   dependencies: ['firstLevelModule']
-  start: (data, cb)->
+  start: (cb, data)->
+    cb(null, 22)
