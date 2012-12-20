@@ -1,8 +1,6 @@
 _ = require 'underscore'
 utils = require './utils'
-# wrench = require 'wrench'
-# fs = require 'fs'
-# async = require 'async'
+async = require 'async'
 
 Base = require './base'
 
