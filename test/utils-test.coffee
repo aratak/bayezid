@@ -1,7 +1,7 @@
 _ = require 'underscore'
 assert = require('chai').assert
 
-describe "#Base", ()->
+describe "#Utils", ()->
   utils = require "#{process.cwd()}/lib/utils"
 
 
