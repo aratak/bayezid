@@ -1,4 +1,4 @@
 module.exports =
   name: 'firstLevelModule'
   dependencies: []
-  start: (data, cb)->
+  start: (cb, data)->
