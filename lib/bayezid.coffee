@@ -7,15 +7,15 @@ utils = require './utils'
 Base = require './base'
 
 class Bayezid extends Base
-  constructor: ({ @rootFolder, @callback })->
+  constructor: ({ @rootFolder })->
     @nodes = for moduleName in utils.getFilesFrom(@rootFolder)
       require utils.normalizePath @rootFolder, moduleName
 
   toAsync: ->
     _.object ([node.name, [node.dependencies, node.start]] for node in @nodes)
 
-  run: ->
-    async.auto @toAsync()
+  run: (callback)->
+    async.auto @toAsync(), callback
 
 
 module.exports = Bayezid
