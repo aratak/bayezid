@@ -12,7 +12,7 @@ class Bayezid extends Base
       require utils.normalizePath @rootFolder, moduleName
 
   toAsync: ->
-    _.object ([node.name, [node.dependencies, node.start]] for node in @nodes)
+    _.object ([node.name, [node.dependencies..., node.start]] for node in @nodes)
 
   run: (callback)->
     async.auto @toAsync(), callback
