@@ -9,11 +9,11 @@ class Bayezid extends Base
     @nodes = for moduleName in utils.getFilesFrom(@rootFolder)
       require utils.normalizePath @rootFolder, moduleName
 
-  toAsync: ->
+  _toAsync: ->
     _.object ([node.name, [node.dependencies..., node.start]] for node in @nodes)
 
   run: (callback)->
-    async.auto @toAsync(), callback
+    async.auto @_toAsync(), callback
 
 
 module.exports = Bayezid
