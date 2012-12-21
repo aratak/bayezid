@@ -34,10 +34,10 @@ describe "#Bayezid", ()->
     toAsync = undefined
 
     beforeEach ->
-      toAsync = bayezid.toAsync()
+      toAsync = bayezid._toAsync()
 
     it "should have method toAsync", ->
-      assert.isFunction bayezid.toAsync
+      assert.isFunction bayezid._toAsync
 
     it "should have chain length as nodes length", ->
       assert.lengthOf _.keys(toAsync), 3
