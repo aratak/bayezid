@@ -1,14 +1,18 @@
 # Bayezid
 
-Simple implementation of bayesian network on Node.js framework
+Simple module requirement, based on bayesian network on Node.js framework
 
 # Usage
 
-pending...
-
-# Contributing
-
-pending...
+``` javascript
+  var Bayazid = require('bayazid');
+  
+  var bayazid = new Bayazid({ rootFolder: "./path/to/folder" });
+  bayazid.run(function (err, data) {
+    console.log(data);
+  });
+  
+```
 
 # Testing
 
