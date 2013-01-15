@@ -14,7 +14,7 @@ class Bayezid extends Base
 
   run: (opts..., callback)->
     params = _.clone @_toAsync()
-    params['init'] =[(cb)-> console.log(opts[0]); cb(null, opts[0]) ]
+    params['init'] =[(cb)-> cb(null, opts[0]) ]
     async.auto params, callback
 
 
