@@ -5,13 +5,13 @@ Simple module requirement, based on bayesian network on Node.js framework
 # Usage
 
 ``` javascript
-  var Bayazid = require('bayazid');
-  
-  var bayazid = new Bayazid({ rootFolder: "./path/to/folder" });
-  bayazid.run(function (err, data) {
+  var bayezid = require('bayezid');
+
+  var bayezid = new Bayezid({ rootFolder: "./path/to/folder" });
+  bayezid.run(function (err, data) {
     console.log(data);
   });
-  
+
 ```
 
 # Testing
