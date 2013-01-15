@@ -12,8 +12,10 @@ class Bayezid extends Base
   _toAsync: ->
     _.object ([node.name, [node.dependencies..., node.start]] for node in @nodes)
 
-  run: (callback)->
-    async.auto @_toAsync(), callback
+  run: (opts..., callback)->
+    params = _.clone @_toAsync()
+    params['init'] =[(cb)-> console.log(opts[0]); cb(null, opts[0]) ]
+    async.auto params, callback
 
 
 module.exports = Bayezid

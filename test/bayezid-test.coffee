@@ -13,7 +13,6 @@ describe "#Bayezid", ()->
     it "should be an object", ->
       assert.isObject bayezid
 
-
   describe "#nodes", ->
 
     it "should have array of nodes", ->
@@ -87,4 +86,27 @@ describe "#Bayezid", ()->
       it "#index", (done)->
         bayezid.run (err, results)->
           assert.property results, 'index'
+          done()
+
+  describe "#run with initial parameters", ->
+    result = undefined
+
+    beforeEach ->
+      bayezid = new Bayezid rootFolder: './test/fixtures/dummyModules'
+
+    it "initial parameters by default is absent", (done)->
+      bayezid.run (err, results)->
+        assert.notProperty results, 'init'
+        done()
+
+    describe "with initial parameters", ->
+
+      it "should be pass to each module", (done)->
+        bayezid.run firstParam: "firstParameter", secondParam: "secondParameter", (results)->
+          assert.property results, 'init'
+          assert.isObject results.init
+          assert.property results.init.firstParam
+          assert.property results.init.secondParam
+          assert.equal results.init.firstParam, 'firstParameter'
+          assert.equal results.init.secondParam, 'secondParameter'
           done()
