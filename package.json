@@ -1,6 +1,6 @@
 {
   "name": "bayezid",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Simple implementation of bayesian network on Node.js framework",
   "main": "index.js",
   "scripts": {
