@@ -8,7 +8,12 @@ Simple module requirement, based on bayesian network on Node.js framework
   var bayezid = require('bayezid');
 
   var bayezid = new Bayezid({ rootFolder: "./path/to/folder" });
+
   bayezid.run(function (err, data) {
+    console.log(data);
+  });
+
+  bayezid.run({some: 'value'}, function (err, data) {
     console.log(data);
   });
 
