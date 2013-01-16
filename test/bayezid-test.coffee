@@ -13,7 +13,6 @@ describe "#Bayezid", ()->
     it "should be an object", ->
       assert.isObject bayezid
 
-
   describe "#nodes", ->
 
     it "should have array of nodes", ->
@@ -64,8 +63,6 @@ describe "#Bayezid", ()->
         assert.isFunction _.last(toAsync['firstLevelModuleTwo'])
 
   describe "#run", ->
-    result = undefined
-
     beforeEach ->
       bayezid = new Bayezid rootFolder: './test/fixtures/dummyModules'
 
@@ -87,4 +84,33 @@ describe "#Bayezid", ()->
       it "#index", (done)->
         bayezid.run (err, results)->
           assert.property results, 'index'
+          done()
+
+  describe "#run with initial parameters", ->
+    beforeEach ->
+      bayezid = new Bayezid rootFolder: './test/fixtures/dummyModules'
+
+    it "initial parameters by default is absent", ->
+      bayezid.run (err, results)->
+        assert.notProperty results, 'init'
+
+    describe "with initial parameters should be pass to each module", ->
+      params = firstParam: "firstParameter", secondParam: "secondParameter"
+
+      it "'init' property", (done)->
+        bayezid.run params, (err, results)->
+          assert.property results, 'init'
+          done()
+
+      it "'init' is a object", (done)->
+        bayezid.run params, (err, results)->
+          assert.isObject results.init
+          done()
+
+      it "'init' should have initial params", (done)->
+        bayezid.run params, (err, results)->
+          assert.property results.init, 'firstParam'
+          assert.property results.init, 'secondParam'
+          assert.equal results.init.firstParam, 'firstParameter'
+          assert.equal results.init.secondParam, 'secondParameter'
           done()
