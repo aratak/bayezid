@@ -21,7 +21,7 @@ Simple module requirement, based on bayesian network on Node.js framework
 
 # Testing
 
-[![Build Status](https://travis-ci.org/aratak/bayezid.png)](https://travis-ci.org/aratak/bayezid)
+[![Build Status](https://travis-ci.org/aratak/bayezid.png?branch=master)](https://travis-ci.org/aratak/bayezid)
 
 `npm test` or `NODE_ENV=test mocha --compilers coffee:coffee-script`
 
